@@ -7,6 +7,8 @@ import { RequestComponent } from './GameBook/Request/request.component';
 import { NavBarComponent } from './GameBook/NavBar/nav-bar.component';
 import { LoginComponent } from './GameBook/Login/login.component';
 import { LoginDataComponent } from './GameBook/Login/Login-data/login-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { LoginDataComponent } from './GameBook/Login/Login-data/login-data.compo
     RequestComponent,
     NavBarComponent,
     LoginComponent,
-    LoginDataComponent
+    LoginDataComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
