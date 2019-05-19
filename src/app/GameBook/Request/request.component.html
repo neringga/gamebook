@@ -1,0 +1,30 @@
+<form style="width:40%; margin-left: auto; margin-right: auto;">
+    <h2 style="text-align: center">Užsakymo forma</h2><br>
+    <div class="form-group">
+        <label for="username">Reklamos matomumo laikotarpis:</label>
+        <input type="text" class="form-control" id="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Mokėjimo kodas:</label>
+        <input type="text" class="form-control" id="password" required>
+    </div>
+    <div class="form-group">
+        <label for="audience">Tikslinė auditorija:</label>
+        <input type="text" class="form-control" id="audience">
+    </div>
+    <div class="form-group">
+        <label for="comments">Komentarai:</label>
+        <input type="text" class="form-control" id="comments">
+    </div>
+    <div class="form-group">
+            <label for="exampleFormControlFile1">Įkelti reklamos vizualą</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" required>
+        <label class="form-check-label" for="exampleRadios2">
+          Sutinku su taisyklėmis
+        </label>
+      </div><br>
+    <button type="submit" class="btn btn-primary" (click)="submitRequestForm()">Pateikti</button>
+</form>
