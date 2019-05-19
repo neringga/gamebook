@@ -7,6 +7,9 @@ import { RequestComponent } from './GameBook/Request/request.component';
 import { NavBarComponent } from './GameBook/NavBar/nav-bar.component';
 import { LoginComponent } from './GameBook/Login/login.component';
 import { LoginDataComponent } from './GameBook/Login/Login-data/login-data.component';
+import { AddTrendsComponent } from './GameBook/AddTrends/add-trends.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { LoginDataComponent } from './GameBook/Login/Login-data/login-data.compo
     RequestComponent,
     NavBarComponent,
     LoginComponent,
-    LoginDataComponent
+    LoginDataComponent,
+    AddTrendsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
