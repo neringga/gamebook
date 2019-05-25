@@ -1,9 +1,9 @@
-<div style="width:70%; margin-left: auto; margin-right: auto;">
-  <h2>Reklamų matomumas</h2>
+<div>
+  <h2 style="margin-top:30px;">Reklamų matomumas</h2><br>
   <p>Čia galite matyti savo įkeltų reklamų matomumo tendencijas</p>
 
-  <div>
-    <p>Pasirinkite mėnesį</p>
+  <div style="display:inline-block; vertical-align:top;">
+    <p>Pasirinkite laikotarpį, kurio duomenis norite matyti</p>
     <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
       </ngb-datepicker>
       
@@ -18,7 +18,7 @@
         </span>
       </ng-template>
   </div>
-  <div *ngIf="show" style="height: 500px; width: 700px; display: block;">
+  <div *ngIf="show" style="height: 500px; width: 700px; display: inline-block; vertical-align:top; margin-left: 150px;">
     <canvas baseChart width="400" height="400"
                 [datasets]="lineCharData2"
                 [labels]="lineChartLabels2"

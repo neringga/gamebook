@@ -46,7 +46,7 @@ export class AddTrendsComponent implements OnInit {
 
   constructor(calendar: NgbCalendar) {
     this.fromDate = calendar.getToday();
-    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+    this.toDate = calendar.getToday();
   }
 
   ngOnInit() {
@@ -139,6 +139,8 @@ export class AddTrendsComponent implements OnInit {
       this.fromDate = date;
     } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
       this.toDate = date;
+      console.error(this.fromDate);
+      console.error(this.toDate);
       this.loadChart(); // TODO add params
     } else {
       this.toDate = null;

@@ -3,24 +3,32 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './GameBook/Login/login.component';
 import { AddTrendsComponent } from './GameBook/AddTrends/add-trends.component';
 import { RequestComponent } from './GameBook/Request/request.component';
+import { NavBarComponent } from './GameBook/NavBar/nav-bar.component';
 
-const routes: Routes = [ 
+const routes: Routes = [
   {
-    path: 'request',
-    component: RequestComponent
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
     path: 'login',
     component: LoginComponent
   },
   {
-    path: 'add-trends',
-    component: AddTrendsComponent
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
+    path: 'main',
+    component: NavBarComponent,
+    children:
+    [
+      {
+        path: 'add-trends',
+        component: AddTrendsComponent
+      },
+      {
+        path: 'request',
+        component: RequestComponent
+      },
+    ]
   }
 ];
 

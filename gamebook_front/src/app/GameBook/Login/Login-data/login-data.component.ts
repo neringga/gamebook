@@ -10,6 +10,6 @@ export class LoginDataComponent {
     constructor(private router: Router){ }
 
     public login() {
-        this.router.navigateByUrl('/request');
+        this.router.navigateByUrl('/main');
     }
 }
