@@ -4,6 +4,7 @@ import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map, groupBy, tap } from 'rxjs/operators';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClient } from '@angular/common/http';
 
 export class AddData {
   monthDay: number;
@@ -44,9 +45,10 @@ export class AddTrendsComponent implements OnInit {
   fromDate: NgbDate;
   toDate: NgbDate;
 
-  constructor(calendar: NgbCalendar) {
+  constructor(calendar: NgbCalendar, private httpClient: HttpClient) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getToday();
+    this.httpClient.get("https://localhost:5001/Login").subscribe();
   }
 
   ngOnInit() {
