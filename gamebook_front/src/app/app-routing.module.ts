@@ -4,6 +4,7 @@ import { LoginComponent } from './GameBook/Login/login.component';
 import { AddTrendsComponent } from './GameBook/AddTrends/add-trends.component';
 import { RequestComponent } from './GameBook/Request/request.component';
 import { NavBarComponent } from './GameBook/NavBar/nav-bar.component';
+import { ActiveAddsComponent } from './GameBook/ActiveAdds/active-adds.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'request',
         component: RequestComponent
+      },
+      {
+        path: 'active-adds',
+        component: ActiveAddsComponent
       },
     ]
   }

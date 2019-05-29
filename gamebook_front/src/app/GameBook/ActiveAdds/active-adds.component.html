@@ -1,0 +1,46 @@
+<div>
+  <h2 style="margin-top:30px;">Aktyvios reklamos</h2><br>
+  <p>Čia galite matyti visas savo šiuo metu aktyvias reklamas</p>
+  
+  <div *ngIf="getAds() | async as ads">
+    <div *ngFor="let ad of ads" >
+      <div *ngIf="!isAdExpired(ad.validUntil)" class="card" style="margin-right: 30px; margin-top: 30px; width: 800px;">
+          <div class="card-body">
+              <div style="display: inline-block; height: 150px; width: 300px; vertical-align: middle">
+                  <img src={{ad.imagePath}} style="width:100%; vertical-align: middle;"/>
+              </div>
+              <div style="display: inline-block; max-width: 800px; margin-left: 30px;">
+                <h4>{{ ad.name }}</h4>
+                <div>Galioja nuo: {{ ad.validFrom | date:'yyyy-MM-dd' }}</div>
+                <div>Galioja iki: {{ ad.validUntil | date:'yyyy-MM-dd' }}</div>
+                <div *ngIf="isAdCloseToExpiring(ad.validUntil)" class="p-3 mb-2 bg-warning text-dark">Dėmesio! Ši reklama netrukus taps nebeaktyvi</div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+
+  <a style="color: gray; font-size: 24px;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Reklamų istorija
+  </a>
+  <div class="collapse" id="collapseExample">
+    <div *ngIf="getAds() | async as ads">
+        <div *ngFor="let ad of ads" >
+          <div *ngIf="isAdExpired(ad.validUntil)" class="card" style="margin-right: 30px; margin-top: 30px; width: 800px;">
+              <div class="card-body">
+                  <div style="display: inline-block; height: 150px; width: 300px;">
+                      <img src={{ad.imagePath}} style="width:100%;"/>
+                  </div>
+                  <div style="display: inline-block; max-width: 800px; margin-left: 30px;">
+                    <h4 style="color: gray;">{{ ad.name }}</h4>
+                    <div style="color: gray;">Galioja nuo: {{ ad.validFrom | date:'yyyy-MM-dd' }}</div>
+                    <div style="color: gray;">Galioja iki: {{ ad.validUntil | date:'yyyy-MM-dd' }}</div>
+                  </div>
+                </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 40px;"></div>
+</div>
